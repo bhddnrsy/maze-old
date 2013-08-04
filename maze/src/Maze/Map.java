@@ -15,16 +15,16 @@ public class Map {
 	
 	public Map(){
 		
-		ImageIcon img = new ImageIcon("images/base.png");
+		ImageIcon img = new ImageIcon("C://Users//shock//git//maze//maze//src//Maze//images//grass.png");
 		base = img.getImage();
 		
-		img = new ImageIcon("images/wall.png");
+		img = new ImageIcon("C://Users//shock//git//maze//maze//src//Maze//images//wall2.jpg");
 		wall = img.getImage();
 		
 		
 		
 		try{
-			sc = new Scanner(new File("map.txt"));
+			sc = new Scanner(new File("C://Users//shock//git//maze//maze//src//Maze//map.txt"));
 		}
 		catch(Exception e){
 			System.out.println("Error loading map!");

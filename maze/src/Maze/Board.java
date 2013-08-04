@@ -22,8 +22,20 @@ public class Board extends JPanel implements ActionListener {
 	
 	public void paint(Graphics g){
 		super.paint(g);
-		g.setColor(Color.red);
-		g.fillRect(45, 60, 32, 32);
+		
+		for (int y=0; y<14; y++){
+			for (int x=0; x<14; x++){
+				
+				if(m.getMap(x, y).equals("g")){
+					g.drawImage(m.getBase(), x*32, y*32, null);
+				}
+				if(m.getMap(x, y).equals("w")){
+					g.drawImage(m.getWall(), x*32, y*32, null);
+				}
+				
+			}
+		}
+		
 	}
 	
 }

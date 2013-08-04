@@ -10,7 +10,7 @@ public class Maze {
 	public Maze(){
 		JFrame fr = new JFrame();
 		fr.setTitle("Maze Game");
-		fr.setSize(500,400);
+		fr.setSize(464,486);
 		fr.setLocationRelativeTo(null);
 		fr.add(new Board());
 		fr.setVisible(true);
