@@ -3,22 +3,21 @@ package Maze;
 import java.awt.*;
 import java.io.*;
 import java.util.*;
-
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 public class Map {
 	
 	private Scanner sc;
-	private String map[] = new String[14];
+	private String map[] = new String[28];
 	private Image base,wall;
 	
 	
 	public Map(){
 		
-		ImageIcon img = new ImageIcon("C://Users//shock//git//maze//maze//src//Maze//images//grass.png");
+		ImageIcon img = new ImageIcon("C://Users//shock//git//maze//maze//src//Maze//images//grass16.png");
 		base = img.getImage();
 		
-		img = new ImageIcon("C://Users//shock//git//maze//maze//src//Maze//images//wall2.jpg");
+		img = new ImageIcon("C://Users//shock//git//maze//maze//src//Maze//images//wall16.jpg");
 		wall = img.getImage();
 		
 		
@@ -51,7 +50,7 @@ public class Map {
 	
 	public void read(){
 		while(sc.hasNext()){
-			for(int i=0; i<14; i++){
+			for(int i=0; i<28; i++){
 				map[i] = sc.next();
 			}
 		}
