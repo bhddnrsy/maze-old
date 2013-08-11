@@ -61,7 +61,7 @@ public class Maze implements ActionListener {
 		fr.setIconImage(icon.getImage());
 		fr.setLayout(new BorderLayout());
 		fr.setTitle("Maze Game");
-		fr.setSize(672,488);
+		fr.setSize(662,478);
 		fr.setResizable(false);
 		fr.setLocationRelativeTo(null);
 		

@@ -8,7 +8,7 @@
  *  Check if new cell will be out of maze or it is already a path. If so, do nothing.
  *  If stuck, take a step back to find an open path.
  *  Recursively implement these steps until it cannot go any further.
- * Update the Maze array according to this info.
+ * Update the Maze array on every change.
  * 
  * 
  *****************************************************************************************************************/
