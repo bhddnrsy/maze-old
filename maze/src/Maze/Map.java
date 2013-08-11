@@ -21,14 +21,14 @@ public class Map {
 	
 	public Map(){
 		
-		ImageIcon img = new ImageIcon("C://Users//shock//git//maze//maze//src//Maze//images//base16.png");
+		ImageIcon img = new ImageIcon(Maze.class.getResource("/Maze/images/base16.png"));
 		base = img.getImage();
 		
-		img = new ImageIcon("C://Users//shock//git//maze//maze//src//Maze//images//wall16.jpg");
+		img = new ImageIcon(Maze.class.getResource("/Maze/images/wall16.jpg"));
 		wall = img.getImage();
-		img = new ImageIcon("C://Users//shock//git//maze//maze//src//Maze//images//finish16.png");
+		img = new ImageIcon(Maze.class.getResource("/Maze/images/finish16.png"));
 		finish = img.getImage();
-		img = new ImageIcon("C://Users//shock//git//maze//maze//src//Maze//images//reddot16.png");
+		img = new ImageIcon(Maze.class.getResource("/Maze/images/reddot16.png"));
 		path = img.getImage();
 		
 		newMaze();
@@ -71,10 +71,10 @@ public class Map {
 		Integer[] randomDirections = generateDirections();
 		
 		for (int i=0; i < randomDirections.length; i++){
-			System.out.println("in for");
+			//System.out.println("in for");
 			switch(randomDirections[i]){
 			case 1://Up
-				System.out.println("1) r:"+r+" c:"+c);
+				//System.out.println("1) r:"+r+" c:"+c);
 				if (r-2 <= 0)
 					continue;
 				if (maze[c][r-2] != 0){
@@ -85,7 +85,7 @@ public class Map {
 				break;
 			
 			case 2://Right
-				System.out.println("2) r:"+r+" c:"+c);
+				//System.out.println("2) r:"+r+" c:"+c);
 				if (c+2 >= width-1)
 					continue;
 				if (maze[c+2][r] != 0){
@@ -96,7 +96,7 @@ public class Map {
 				break;
 			
 			case 3://Down
-				System.out.println("3) r:"+r+" c:"+c);
+				//System.out.println("3) r:"+r+" c:"+c);
 				if (r+2 >= height-1)
 					continue;
 				if (maze[c][r+2] != 0){
@@ -107,7 +107,7 @@ public class Map {
 				break;
 		
 			case 4://Left
-				System.out.println("4) r:"+r+" c:"+c);
+				//System.out.println("4) r:"+r+" c:"+c);
 				if (c-2 <= 0)
 					continue;
 				if (maze[c-2][r] != 0){
@@ -118,7 +118,7 @@ public class Map {
 				break;
 			}
 		}
-		maze[39][25] = 2;
+		maze[40][25] = 2;
 	}
 	
 	public Integer[] generateDirections(){

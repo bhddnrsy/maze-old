@@ -11,7 +11,7 @@ public class Player {
 	
 	public Player(){
 		
-		ImageIcon img = new ImageIcon("C://Users//shock//git//maze//maze//src//Maze//images//dot16.png");
+		ImageIcon img = new ImageIcon(Maze.class.getResource("/Maze/images/dot16.png"));
 		player = img.getImage();
 		
 		tileX = 1;
