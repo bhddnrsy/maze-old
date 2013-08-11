@@ -1,9 +1,18 @@
+/* Player.class
+ * 
+ * This class have been created to let user travel on base tiles to get to the finish tile.
+ * User shown as a red dot and user can move this red dot using arrow keys.
+ * 
+ * 
+ *****************************************************************************************************************/
+
+
 package Maze;
 
 import java.awt.*;
+import javax.swing.*;
 
-import javax.swing.ImageIcon;
-
+//Player class
 public class Player {
 
 	private int tileX,tileY;
@@ -14,6 +23,7 @@ public class Player {
 		ImageIcon img = new ImageIcon(Maze.class.getResource("/Maze/images/dot16.png"));
 		player = img.getImage();
 		
+		//Start position of user.
 		tileX = 1;
 		tileY = 0;
 	}
@@ -36,7 +46,7 @@ public class Player {
 	}
 	
 	public void move(int dx, int dy){
-		
+		//Move the player on tile up,down,right or left.
 		tileX += dx;
 		tileY += dy;
 		
