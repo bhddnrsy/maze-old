@@ -9,9 +9,6 @@ import javax.swing.*;
 public class Board extends JPanel implements ActionListener {
 	
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Timer timer;
 	private Map m;
@@ -19,10 +16,8 @@ public class Board extends JPanel implements ActionListener {
 	private String message="";
 	private boolean win = false;
 	private boolean newRand = false;
-	int sec = 0;
 	
 	public Board(){
-		
 		m = new Map();
 		p = new Player();
 		
@@ -34,7 +29,7 @@ public class Board extends JPanel implements ActionListener {
 	
 	public void actionPerformed(ActionEvent e){
 		
-		if(m.getMap(p.getTileX(), p.getTileY()).equals("f")){
+		if(m.getMap(p.getTileX(), p.getTileY()) == 2){
 			message ="You won!";
 			win = true;
 		}
@@ -42,34 +37,37 @@ public class Board extends JPanel implements ActionListener {
 			p.setTileX(1);
 			p.setTileY(1);
 			m = new Map();
-			m.setMap();
-			newRand = false;
+			//newRand = false;
 		}
 		repaint();
 	}
 	
 	public void paint(Graphics g){
 		super.paint(g);
-		
-		for (int y=0; y<28; y++){
-			for (int x=0; x<28; x++){
+		newRand = false;
+		for (int x=0; x<41; x++){
+			for (int y=0; y<27; y++){
 				
-				if(m.getMap(x,y).equals("f")){
+				if(m.getMap(x,y) == 2){
 					g.drawImage(m.getFinish(),x*16,y*16,null);
 				}
-				if(m.getMap(x, y).equals("g")){
+				if(m.getMap(x, y) == 0){
 					g.drawImage(m.getBase(), x*16, y*16, null);
 				}
-				if(m.getMap(x, y).equals("w")){
+				if(m.getMap(x, y) == 1){
 					g.drawImage(m.getWall(), x*16, y*16, null);
 				}
 				
+				
 			}
 		}
+		
+		
 		if(win)
 		g.drawString(message, 500, 50);
-		
+		//g.drawImage(m.getPath(),p.getTileX()*16,p.getTileY()*16,null);
 		g.drawImage(p.getPlayer(), p.getTileX()*16, p.getTileY()*16, null);
+			
 		
 	}
 	
@@ -79,19 +77,19 @@ public class Board extends JPanel implements ActionListener {
 			int code = e.getKeyCode();
 			
 			if (code == KeyEvent.VK_UP) {
-				if( ! m.getMap(p.getTileX(), p.getTileY()-1).equals("w") )
+				if( m.getMap(p.getTileX(), p.getTileY()-1) != 1 )
 					p.move(0, -1);
 			}
 			if (code == KeyEvent.VK_DOWN) {
-				if( ! m.getMap(p.getTileX(), p.getTileY()+1).equals("w") )
+				if( m.getMap(p.getTileX(), p.getTileY()+1) != 1 )
 					p.move(0, 1);
 			}
 			if (code == KeyEvent.VK_LEFT) {
-				if( ! m.getMap(p.getTileX()-1, p.getTileY()).equals("w") )
+				if( m.getMap(p.getTileX()-1, p.getTileY()) != 1 )
 					p.move(-1, 0);
 			}
 			if (code == KeyEvent.VK_RIGHT) {
-				if( ! m.getMap(p.getTileX()+1, p.getTileY()).equals("w") )
+				if( m.getMap(p.getTileX()+1, p.getTileY()) != 1 )
 					p.move(1, 0);
 			}
 			if (code == KeyEvent.VK_R){
@@ -103,6 +101,13 @@ public class Board extends JPanel implements ActionListener {
 		}
 		
 		
+	}
+	
+	public boolean getNewRand(){
+		return newRand;
+	}
+	public boolean getWin(){
+		return win;
 	}
 	
 }

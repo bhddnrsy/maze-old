@@ -15,7 +15,7 @@ public class Player {
 		player = img.getImage();
 		
 		tileX = 1;
-		tileY = 1;
+		tileY = 0;
 	}
 	
 	public Image getPlayer(){
